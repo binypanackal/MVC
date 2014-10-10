@@ -1,0 +1,61 @@
+﻿@model DoExpenceses.DoExpensesDto.UserDetail
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UserDetail</legend>
+
+        <table>
+            <tr>
+                <td>
+              @Html.LabelFor(model => model.UserName)
+                </td>
+                <td>
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+            @Html.LabelFor(model => model.Password)
+                </td>
+                <td>
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td>
+            @Html.LabelFor(model => model.FirstName)
+                </td>
+                <td>
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+            @Html.LabelFor(model => model.LastName)
+                </td>
+                <td>
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+            @Html.LabelFor(model => model.EmaillID)
+                </td>
+                <td >
+            @Html.EditorFor(model => model.EmaillID)
+            @Html.ValidationMessageFor(model => model.EmaillID)
+                </td>
+            </tr>
+        
+        </table>
+        <p>
+            <div class="generalBtn" id="createUser" >Create</div>
+        </p>
+    </fieldset>
+}

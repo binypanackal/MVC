@@ -1,0 +1,5 @@
+C:\biny\MVC4\DoExpenses\DoExpenses\bin\Debug\DoExpenses.dll
+C:\biny\MVC4\DoExpenses\DoExpenses\bin\Debug\DoExpenses.pdb
+C:\biny\MVC4\DoExpenses\DoExpenses\obj\Debug\DoExpenses.dll
+C:\biny\MVC4\DoExpenses\DoExpenses\obj\Debug\DoExpenses.pdb
+C:\biny\MVC4\DoExpenses\DoExpenses\obj\Debug\DoExpensesDto.csprojResolveAssemblyReference.cache

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DoExpencesesAngualarModelStoreContainer" CdmEntityContainer="DoExpencesesAngualarEntitiesConnection">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="DoExpencesesAngualarModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryTitle" ColumnName="CategoryTitle" />
+          <ScalarProperty Name="CategoryStatus" ColumnName="CategoryStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompletedTasks">
+      <EntityTypeMapping TypeName="DoExpencesesAngualarModel.CompletedTask">
+        <MappingFragment StoreEntitySet="CompletedTask">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CompletedTaskID" ColumnName="CompletedTaskID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="SheduledDate" ColumnName="SheduledDate" />
+          <ScalarProperty Name="DifferenceMargin" ColumnName="DifferenceMargin" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Expence" ColumnName="Expence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="DoExpencesesAngualarModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SheduledDate" ColumnName="SheduledDate" />
+          <ScalarProperty Name="RecuringType" ColumnName="RecuringType" />
+          <ScalarProperty Name="Expence" ColumnName="Expence" />
+          <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="DoExpencesesAngualarModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EmaillID" ColumnName="EmaillID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

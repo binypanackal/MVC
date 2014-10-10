@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DoExpencesesAngualarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DoExpencesesAngualarModelStoreContainer">
+    <EntitySet Name="Category" EntityType="DoExpencesesAngualarModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompletedTask" EntityType="DoExpencesesAngualarModel.Store.CompletedTask" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Task" EntityType="DoExpencesesAngualarModel.Store.Task" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserDetails" EntityType="DoExpencesesAngualarModel.Store.UserDetails" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Category__UserID__1FCDBCEB" Association="DoExpencesesAngualarModel.Store.FK__Category__UserID__1FCDBCEB">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Completed__TaskI__276EDEB3" Association="DoExpencesesAngualarModel.Store.FK__Completed__TaskI__276EDEB3">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="CompletedTask" EntitySet="CompletedTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Completed__UserI__286302EC" Association="DoExpencesesAngualarModel.Store.FK__Completed__UserI__286302EC">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="CompletedTask" EntitySet="CompletedTask" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task__CategoryID__239E4DCF" Association="DoExpencesesAngualarModel.Store.FK__Task__CategoryID__239E4DCF">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Task" EntitySet="Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task__UserID__24927208" Association="DoExpencesesAngualarModel.Store.FK__Task__UserID__24927208">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Task" EntitySet="Task" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryTitle" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="CategoryStatus" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="CompletedTask">
+    <Key>
+      <PropertyRef Name="CompletedTaskID" />
+    </Key>
+    <Property Name="CompletedTaskID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TaskID" Type="int" Nullable="false" />
+    <Property Name="CompletedDate" Type="date" />
+    <Property Name="SheduledDate" Type="date" />
+    <Property Name="DifferenceMargin" Type="int" />
+    <Property Name="CreateDate" Type="date" />
+    <Property Name="Expence" Type="decimal" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="TaskID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="SheduledDate" Type="date" />
+    <Property Name="RecuringType" Type="varchar" MaxLength="2" />
+    <Property Name="Expence" Type="decimal" />
+    <Property Name="TaskStatus" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="EmaillID" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Category__UserID__1FCDBCEB">
+    <End Role="UserDetails" Type="DoExpencesesAngualarModel.Store.UserDetails" Multiplicity="0..1" />
+    <End Role="Category" Type="DoExpencesesAngualarModel.Store.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Completed__TaskI__276EDEB3">
+    <End Role="Task" Type="DoExpencesesAngualarModel.Store.Task" Multiplicity="1" />
+    <End Role="CompletedTask" Type="DoExpencesesAngualarModel.Store.CompletedTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="TaskID" />
+      </Principal>
+      <Dependent Role="CompletedTask">
+        <PropertyRef Name="TaskID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Completed__UserI__286302EC">
+    <End Role="UserDetails" Type="DoExpencesesAngualarModel.Store.UserDetails" Multiplicity="0..1" />
+    <End Role="CompletedTask" Type="DoExpencesesAngualarModel.Store.CompletedTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CompletedTask">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task__CategoryID__239E4DCF">
+    <End Role="Category" Type="DoExpencesesAngualarModel.Store.Category" Multiplicity="1" />
+    <End Role="Task" Type="DoExpencesesAngualarModel.Store.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task__UserID__24927208">
+    <End Role="UserDetails" Type="DoExpencesesAngualarModel.Store.UserDetails" Multiplicity="0..1" />
+    <End Role="Task" Type="DoExpencesesAngualarModel.Store.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

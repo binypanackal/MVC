@@ -1,0 +1,11 @@
+﻿<div style="padding-left:20px;padding-top:20px">
+        <div class="heading">Create Task</div>
+            <table>
+                <tr><td>Description</td><td><input type="text" id="newDescription" ng-model="task.Description"/></td></tr>
+                <tr><td>Sheduled Date</td><td><input name="dateInput" type="date" id="newSheduledDate"  ng-model="task.SheduledDate" /></td></tr>
+                <tr><td>Expence</td><td><input type="text"  id="newExpence" ng-model="task.Expence"/></td></tr>
+                <tr><td></td><td><a ng-href="/#/Tasks" id="saveNewTask" class="generalBtn" ng-click="save(task)" >Save</a></td></tr>
+            </table>
+
+        Task : {{task.Description}} <span class="displayText"> @@</span><i class="icon-calendar"></i>{{task.SheduledDate|  date:'MM/dd/yyyy'}} {{task.Expence| currency}}.
+</div>

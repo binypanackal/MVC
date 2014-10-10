@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c549e8ee8627495cb5b1979f31b3a697" Name="Diagram1">
+        <EntityTypeShape EntityType="DoExpencesesAngualarModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoExpencesesAngualarModel.CompletedTask" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoExpencesesAngualarModel.Task" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DoExpencesesAngualarModel.FK__Task__CategoryID__0EA330E9" ManuallyRouted="false" />
+        <AssociationConnector Association="DoExpencesesAngualarModel.FK__Completed__TaskI__117F9D94" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DoExpencesesAngualarModel.UserDetail" Width="1.5" PointX="8.2458984145177041" PointY="5.7707382169415888" />
+        <AssociationConnector Association="DoExpencesesAngualarModel.FK__Category__UserID__1FCDBCEB" />
+        <AssociationConnector Association="DoExpencesesAngualarModel.FK__Completed__UserI__286302EC" />
+        <AssociationConnector Association="DoExpencesesAngualarModel.FK__Task__UserID__24927208" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

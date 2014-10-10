@@ -1,0 +1,10 @@
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\DoExpensesEntity.dll.config
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\DoExpensesEntity.dll
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\DoExpensesEntity.pdb
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\DoExpenses.dll
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\EntityFramework.dll
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\DoExpenses.pdb
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\EntityFramework.xml
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.csprojResolveAssemblyReference.cache
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.dll
+C:\biny\MVC4\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.pdb

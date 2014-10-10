@@ -1,0 +1,36 @@
+﻿@model DoExpenceses.DoExpensesDto.UserDetail
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    
+<div>
+    <table>
+        <tr>
+            <td>Login</td>
+            <td></td>
+        </tr>
+           <tr>
+                <td>
+              @Html.LabelFor(model => model.UserName)
+                </td>
+                <td>
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+            @Html.LabelFor(model => model.Password)
+                </td>
+                <td>
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td> <div class="generalBtn" id="login" >Login</div></td><td></td>
+            </tr>
+    </table>
+       @Html.ValidationSummary()
+</div>
+}
+         @Scripts.Render("~/bundles/jqueryval")

@@ -1,0 +1,18 @@
+﻿<div style="padding-left:20px;padding-top:20px">
+<div class="heading">Task List</div>
+<table>
+    <tr ng-repeat="task in taskList"  >
+        <td  class="TaskList"  ng-class='{TaskListSelected: task.TaskID==selectedRow }' ng-click='SelectRow(task.TaskID)'>
+            <div style="float:left;">{{task.Description}} <span class="displayText"> @@</span>{{task.SheduledDate | date:'MM/dd/yyyy'}} <span class="displayText"></span>{{task.Expence|currency}}.</div>
+            <div class="completeBtn" ng-class='{"completeBtnSelected": task.TaskID==selectedRow }'>
+                <div class="glyphicon glyphicon-ok"></div>
+
+            </div>
+
+        </td>    
+       
+    </tr>
+</table>
+    </div>
+
+ 

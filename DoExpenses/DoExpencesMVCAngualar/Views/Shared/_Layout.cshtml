@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="DoExpencesApp">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+         @Scripts.Render("~/bundles/jqueryNAngular")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <br /><br />
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                      
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            <div id="layout-content">
+           <div id="content">
+            <div id="tab-container">
+                <ul>
+                    <li><a href="/#/Tasks"id="AllTask">All Tasks</a></li>
+                    <li><a href="#" id="next7DaysTasks">Tasks For next 7 days</a></li>
+                    <li><a href="#" id="CompletedTasks">Completed Tasks</a></li>
+                    <li><a href="#">Reports</a></li>
+                </ul>
+            </div>
+           
+            </div>
+            
+
+             <section id="main-container">
+                @RenderBody()
+            </section>    
+        </div>
+            
+                <div id="FooterButtonList">
+                    <a id="AddButton" class="footerBtn" href="/#/CreateTask">+</a>
+                    <div class="footerBtn">-</div>
+                    <div class="footerBtn" id="completeButton">=</div>
+                </div>
+                
+                <br class="side-div"/>
+                
+                </div>
+                
+    
+
+       
+
+        @RenderSection("scripts", required: false)
+
+       @* <script id="CreateTask" type="text/x-handlebars-template">
+            <table>
+                
+            <tr><td>Description</td><td><input type="text" id="newDescription"/></td></tr>
+            <tr><td>Sheduled Date</td><td><input type="text" id="newSheduledDate" /></td></tr>
+            <tr><td>Expence</td><td><input type="text"  id="newExpence"/></td></tr>
+            <tr><td></td><td><div id="saveNewTask" class="generalBtn">Save</div></td></tr>
+            </table>
+        </script>
+
+         <script id="displayTasks" type="text/x-handlebars-template">
+             <div class="heading">Task List</div>
+            <table>
+                {{#each task}}
+                <tr><td id="TaskList" class="TaskList"><input type="checkbox"  taskId="{{TaskID}}" id="selectTask" /> {{@@index}} . {{Description}} <span class="displayText"> @@</span>{{formatDate SheduledDate}} <span class="displayText">$</span>{{Expence}}.</td></tr>
+                {{/each}}
+            </table>
+             |
+        </script>
+
+          <script id="displayCompletedTasks" type="text/x-handlebars-template">
+             <div class="heading">Completed Task List</div>
+            <table>
+                {{#each completedTask}}
+                <tr><td id="TaskList" class="TaskList">{{Task.Description}}  <span class="displayText"> completed on :@@</span>{{formatDate CompletedDate}} <span class="displayText"> with diffrence of :@@</span>{{DifferenceMargin}} days. </td></tr>
+                {{/each}}
+            </table>
+             
+        </script>
+
+        
+         <script id="7DaysTasks" type="text/x-handlebars-template">
+             <div class="heading">Task's for next 7 days</div>
+            <table>
+                {{#each task}}
+                <tr><td id="TaskList" class="TaskList"><input type="checkbox"  taskId="{{TaskID}}" id="selectTask" /> {{@@index}} . {{Description}} <span class="displayText"> @@</span>{{formatDate SheduledDate}} <span class="displayText">$</span>{{Expence}}.</td></tr>
+                {{/each}}
+            </table>
+             |
+        </script>
+
+
+        <script>
+            var tasks = (function () {
+
+                var taskUrl = '@Url.RouteUrl("DefaultApi",new {httproute=true,  Controller="Task"})';
+                var taskCompleteUrl = '@Url.RouteUrl("DefaultApi",new {httproute=true,  Controller="TaskComplete"})';
+                var taskforNext7DaysUrl = '@Url.RouteUrl("DefaultApi",new {httproute=true,  Controller="Task",id=7})';
+
+                //Ajax Error handler method
+                $(document).ajaxError(function (event, xhr) {
+                    alert("Error" + xhr.responseText);
+                });
+
+                //Task Section
+                //Get Tasks
+                var getTasks = function () {
+                    return $.ajax(taskUrl);
+                };
+                //Get Completed Tasks             
+                var getCompletedTasks = function () {
+                    return $.ajax(taskCompleteUrl);
+                };
+                //Get Tasks for next 7 days
+                var getNext7DaysTasks = function () {
+                    return $.ajax(taskforNext7DaysUrl);
+                };
+
+
+                //Save New Task
+                var saveNewTask = function () {
+
+                    var task = {
+                        "CategoryID": 1,
+                        "Description": $('#newDescription').val(),
+                        "SheduledDate": $('#newSheduledDate').val(),
+                        "Expence": $('#newExpence').val(),
+                        "TaskStatus": 1
+                    };
+
+                    return $.ajax(taskUrl, {
+                        type: 'PUT',
+                        data: task
+                    })
+
+                };
+                //mark task as completed
+                var markTaskAsCompleted = function () {
+                    var jsonObj = [];
+
+                    $('input:checked').each(function () {
+
+                        var temp = new Object();
+                        temp["TaskID"] = $(this).attr("taskId");
+                        temp["CompletedTaskID"] = "";
+                        temp["CompletedDate"] = "";
+                        temp["SheduledDate"] = "";
+                        temp["DifferenceMargin"] = "";
+                        temp["CreateDate"] = "";
+
+                        jsonObj.push(temp)
+                    });
+
+
+                    return $.ajax(taskCompleteUrl, {
+                        type: 'POST',
+                        data: JSON.stringify(jsonObj),
+                        contentType: "application/json"
+                    })
+
+                };
+                //returns
+                return {
+                    getTasks: getTasks,
+                    saveNewTask: saveNewTask,
+                    markTaskAsCompleted: markTaskAsCompleted,
+                    getCompletedTasks: getCompletedTasks,
+                    getNext7DaysTasks: getNext7DaysTasks
+                };
+
+            }());
+
+            $(document).ready(function () {
+
+                var templates = {}
+
+                //creating html to dispaly
+
+                // display the create form with data
+                var showCreateTaskTemplate = function () {
+                    templates.CreateVedio = Handlebars.compile($('#CreateTask').html());
+                    var createVedioHtml = templates.CreateVedio(null);
+                    $("#main-container").html(createVedioHtml);
+                };
+                // display tasks with data
+                var showTasks = function (data) {
+                    templates.showTasks = Handlebars.compile($('#displayTasks').html());
+                    var showTaskHtml = templates.showTasks({ task: data });
+                    $("#main-container").html(showTaskHtml);
+                };
+
+                //show completed tasks          
+                var showCompltedTasks = function (data) {
+
+                    templates.showTasks = Handlebars.compile($('#displayCompletedTasks').html());
+                    var showTaskHtml = templates.showTasks({ completedTask: data });
+                    $("#main-container").html(showTaskHtml);
+                };
+
+                var showTaskForNext7Days = function (data) {
+                    templates.showTasks = Handlebars.compile($('#7DaysTasks').html());
+                    var showTaskHtml = templates.showTasks({ task: data });
+                    $("#main-container").html(showTaskHtml);
+                };
+
+                //adding event handlers to button
+                //side buttons
+                $("#AllTask").click(function () {
+                    tasks.getTasks().done(showTasks);
+                });
+
+                $("#CompletedTasks").click(function () {
+                    tasks.getCompletedTasks().done(showCompltedTasks);
+                });
+
+                $("#next7DaysTasks").click(function () {
+                    tasks.getNext7DaysTasks().done(showTaskForNext7Days);
+                });
+
+                //footer buttons
+                $("#AddButton").click(function (obj) {
+                    showCreateTaskTemplate();
+                });
+
+                $("#saveNewTask").live('click', function (obj) {
+                    tasks.saveNewTask();
+                    tasks.getTasks().done(showTasks);
+                });
+
+                $("#completeButton").live('click', function (obj) {
+                    tasks.markTaskAsCompleted();
+                    tasks.getTasks().done(showTasks);
+                });
+
+
+                //date format for handlebar
+
+                Handlebars.registerHelper("formatDate", function (date) {
+                    if (typeof (date) == "undefined") {
+                        return "Unknown";
+                    }
+                    // These methods need to return a String
+
+                    var formatedDate = new Date(date);
+
+
+                    return formatedDate.getDate() + "/" + (eval(formatedDate.getMonth() + 1)) + "/" + formatedDate.getFullYear();
+                });
+
+            });
+
+        </script>*@
+    </body>
+</html>
