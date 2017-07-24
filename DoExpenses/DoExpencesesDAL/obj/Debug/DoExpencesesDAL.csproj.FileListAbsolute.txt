@@ -18,3 +18,8 @@ D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpenses.pdb
 D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.csprojResolveAssemblyReference.cache
 D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.dll
 D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpencesesDAL.dll.config
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\EntityFramework.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\EntityFramework.xml
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\EntityFramework.SqlServer.xml
