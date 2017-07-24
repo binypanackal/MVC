@@ -9,3 +9,12 @@ C:\biny\MVC4\DoExpenses\DoExpencesesDAL\bin\Debug\EntityFramework.xml
 C:\biny\MVC4\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.csprojResolveAssemblyReference.cache
 C:\biny\MVC4\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.dll
 C:\biny\MVC4\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpencesesDAL.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpencesesDAL.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpenses.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpensesEntity.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpensesEntity.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\bin\Debug\DoExpenses.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.csprojResolveAssemblyReference.cache
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpencesesDAL\obj\Debug\DoExpencesesDAL.pdb

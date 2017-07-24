@@ -8,3 +8,15 @@ C:\biny\MVC4\DoExpenses\DoExpensesEntity\bin\Debug\EntityFramework.xml
 C:\biny\MVC4\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.csprojResolveAssemblyReference.cache
 C:\biny\MVC4\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.dll
 C:\biny\MVC4\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\DoExpensesEntity.dll.config
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\DoExpensesEntity.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\DoExpensesEntity.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\DoExpenses.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\EntityFramework.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\DoExpenses.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\EntityFramework.xml
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.csprojResolveAssemblyReference.cache
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\obj\Debug\DoExpensesEntity.pdb
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\EntityFramework.SqlServer.dll
+D:\Git\MyTestAppGIt\MVC\DoExpenses\DoExpensesEntity\bin\Debug\EntityFramework.SqlServer.xml
